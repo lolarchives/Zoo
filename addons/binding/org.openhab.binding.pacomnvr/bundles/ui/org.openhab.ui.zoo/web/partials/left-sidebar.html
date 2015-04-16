@@ -1,0 +1,27 @@
+<div>
+  <!--mobile search bar-->
+  <form class="search-bar mobile-search-bar visible-mobile">
+    <input type="text" class="field" ng-model="search.query">
+  </form>
+
+  <!--mobile user info-->
+  <a ui-sref="profile" class="user visible-mobile">
+    <div class="photo-wrap">
+      <img src="img/user.jpg" alt="">
+    </div>
+    <span class="welcome">Welcome back</span>
+    <strong class="user-name">{{user.name}}</strong>
+  </a>
+
+  <ul class="nav">
+    <nav-state name="rooms"         title="Rooms" icon="room"></nav-state>
+    <nav-state name="energy-center" title="Energy Center"></nav-state>
+    <nav-state name="access"        title="Access"></nav-state>
+    <nav-state name="cctv"          title="CCTV"></nav-state>
+    <nav-state name="cost-settings" title="Cost Settings"></nav-state>
+    <nav-state name="alerts"        title="Alerts" icon="alert"></nav-state>
+    <nav-state name="alarm"         title="Alarm"></nav-state>
+    <nav-state name="intercom"      title="Intercom"></nav-state>
+    <nav-state name="settings"      title="Settings" state="settings.discover"></nav-state>
+  </ul>
+</div>

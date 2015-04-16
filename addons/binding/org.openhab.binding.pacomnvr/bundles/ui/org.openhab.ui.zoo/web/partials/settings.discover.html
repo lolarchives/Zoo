@@ -1,0 +1,44 @@
+<div>
+  <div class="group">
+    <h2>List of items found</h2>
+    <button ng-click="scan()">Press to scan</button>
+  </div>
+
+  <div class="ui accordion">
+
+    <form ng-repeat="binding in discoverableBindings">
+      <div class="title">
+        {{binding}}
+      </div>
+      <div class="content">
+        <!--<p class="no-margin"><strong>UID: {{thing.thingUID}}</strong></p>-->
+        <div ng-repeat="thing in scanResults | filter:binding" class="row cols-margin">
+          <p class="no-margin"><strong>UID: {{thing.thingUID}}</strong></p>
+          <div class="col4">
+            Name
+            <input type="text" class="field" required="required"
+                   name="label" ng-model="approveData[thing.thingUID].label">
+          </div>
+          <div class="col4">
+            Group
+            <select class="field" name="group" ng-model="approveData[thing.thingUID].group">
+              <option>Living room</option>
+              <option>TV room</option>
+              <option>Main room</option>
+            </select>
+          </div>
+          <div class="col4">
+            <br>
+            <input type="submit" value="Add" class="btn btn-block" ng-click="approve(thing.thingUID)">
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+  <script>
+    // TODO Angularify me
+    $('.ui.accordion').accordion();
+  </script>
+</div>
